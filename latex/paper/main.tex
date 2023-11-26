@@ -404,7 +404,21 @@ $ sudo systemctl restart postfix
 
 Bisognerà poi accedere al \textbf{pannello di controllo dell'account Google} per permettere ad "app meno sicure" di eseguire l'accesso.
 
+\pagebreak
+
 \section{Conclusioni}
+Lo script funziona come previsto: nel caso di un malfunzionamento dei dischi \textbf{md} verrà inviata una mail all'indirizzo specificato nel file di configurazione e scritta una voce nel file di log.
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/inbox.png}
+    \centering
 
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/mail.png}
+    \centering
+    \caption{Posta in arrivo di Gmail}
 
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/log.png}
+    \centering
+    \caption{/var/log/mdmon.log}
+\end{figure}
+In caso contrario, cron continuerà ad eseguire lo script indefinitivamente, continuando a scrivere log sul file apposito.
 \end{document}
