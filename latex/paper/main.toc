@@ -8,9 +8,9 @@
 \contentsline {section}{\numberline {3}Caso di studio e implementazione}{4}{}%
 \contentsline {subsection}{\numberline {3.1}Configurazione della macchina virtuale}{4}{}%
 \contentsline {subsection}{\numberline {3.2}Installazione del sistema operativo}{5}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Configurazione della partizione RAID 1}{5}{}%
-\contentsline {subsection}{\numberline {3.3}Configurazione di RAID 5}{14}{}%
-\contentsline {subsection}{\numberline {3.4}Creazione e configurazione dell'utenza}{14}{}%
-\contentsline {subsection}{\numberline {3.5}Installazione e configurazione di SAMBA}{14}{}%
-\contentsline {subsection}{\numberline {3.6}Sistema di alert}{14}{}%
-\contentsline {section}{\numberline {4}Conclusioni}{14}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Configurazione della partizione RAID 1}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Configurazione di RAID 5}{7}{}%
+\contentsline {subsection}{\numberline {3.4}Creazione e configurazione dell'utenza}{7}{}%
+\contentsline {subsection}{\numberline {3.5}Installazione e configurazione di SAMBA}{7}{}%
+\contentsline {subsection}{\numberline {3.6}Sistema di alert}{7}{}%
+\contentsline {section}{\numberline {4}Conclusioni}{7}{}%

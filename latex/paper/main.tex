@@ -174,88 +174,41 @@ L'installazione grafica di Debian fornisce un'interfaccia utente intuitiva che s
     \item Rete: Configurazione delle impostazioni di rete, tra cui la configurazione manuale o automatica dell'indirizzo IP, la configurazione del gateway, e altre opzioni relative alla connettività di rete.
     \item Partizionamento del Disco: Gli utenti hanno la possibilità di definire la configurazione delle partizioni del disco rigido.
 \end{itemize}
+\pagebreak
+Avremo un partizionamento di questo tipo:
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/lsblk.png}
+    \centering
+\end{figure}
+
+dove:
+\begin{itemize}
+    \item \texttt{vda} e \texttt{vdb} sono i dischi per il sistema operativo
+    \item \texttt{vdc}, \texttt{vdd} e \texttt{vde} sono i dischi per lo sharing con SAMBA
+    \item \texttt{md0} e \texttt{md1} sono i dispositivi \textit{multiple device}, rispettivamente di tipo RAID1 e RAID5
+    \item \texttt{vda5} e \texttt{vdb5} è la partizione di SWAP
+    \item \texttt{vda2} e \texttt{vdb2} è una partizione di tipo \texttt{udev}    
+\end{itemize}
+
+\pagebreak
 
 \subsubsection{Configurazione della partizione RAID 1}
-In questo caso l'installer ci permette comodamente di configurare la partizione \textbf{RAID 1} per il mountpoint di root (/) prima ancora di installare Debian:
+In questo caso l'installer ci permette comodamente di configurare la partizione \textbf{RAID 1} per il mountpoint di root (/) prima ancora di installare Debian. Il processo utilizzato è il seguente:
 
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid1.png}
-    \centering
-    \caption{Seleziona partizionamento manuale}
+\begin{enumerate}
+    \item Creare due partizioni vuote per \texttt{vda} e \texttt{vdb}
+    \item Impostare il tipo delle partizioni come \textit{volume fisico per RAID}
+    \item Creare un \texttt{MD} (multiple device) di tipo RAID1 (\texttt{md0})
+    \item Impostare il numero di device attivi a 2
+    \item Impostare il numero di spare device a 0
+    \item Selezionare i device da utilizzare per l'array RAID1 (\texttt{vda1} e \texttt{vdb1})
+    \item Creare Il filesystem di root sulla partizione RAID1 appena creata
+\end{enumerate}
 
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid2.png}
-    \centering
-    \caption{Crea una tabella di partizione vuota sui dischi usati per il RAID1}
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid3.png}
-    \centering
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid4.png}
-    \centering
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid5.png}
-    \centering
-    \caption{Crea partizione del primo disco}
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid6.png}
-    \centering
-    \caption{Seleziona partizionamento manuale}
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid7.png}
-    \centering
-    \caption{Specificare il tipo della partizione come volume fisico RAID}
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid8.png}
-    \centering
-    \caption{Replicare il processo per il secondo disco}
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid9.png}
-    \centering
-    \caption{Configurare software RAID}
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid10.png}
-    \centering
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid11.png}
-    \centering
-    \caption{Creare due dispositivi MD per le nuove partizioni}
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid12.png}
-    \centering
-    \caption{Scegliere livello di RAID}
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid13.png}
-    \centering
-    \caption{Impostare il numero di dispositivi per l'array}
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid14.png}
-    \centering
-    \caption{Scegliere il numero di spare devices}
-\end{figure}
-
-\begin{figure}[H]
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid15.png}
-    \centering
-    \caption{Selezionare i dispositivi attivi}
-
-    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid16.png}
-    \centering
-    \caption{Creare il filesystem di root sul dispositivo RAID}
-\end{figure}
 
 \subsection{Configurazione di RAID 5}
+
+
 \subsection{Creazione e configurazione dell'utenza}
 \subsection{Installazione e configurazione di SAMBA}
 \subsection{Sistema di alert}

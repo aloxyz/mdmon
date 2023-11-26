@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.7.3)  26 NOV 2023 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.7.3)  26 NOV 2023 18:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1003,108 +1003,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--141
 
  []
 
-[3] [4]
-<../img/raid install/raid1.png, id=33, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid1.png Graphic file (type png)
-<use ../img/raid install/raid1.png>
-Package pdftex.def Info: ../img/raid install/raid1.png  used on input line 182.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid2.png, id=34, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid2.png Graphic file (type png)
-<use ../img/raid install/raid2.png>
-Package pdftex.def Info: ../img/raid install/raid2.png  used on input line 186.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [5]
-<../img/raid install/raid3.png, id=38, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid3.png Graphic file (type png)
-<use ../img/raid install/raid3.png>
-Package pdftex.def Info: ../img/raid install/raid3.png  used on input line 192.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid4.png, id=39, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid4.png Graphic file (type png)
-<use ../img/raid install/raid4.png>
-Package pdftex.def Info: ../img/raid install/raid4.png  used on input line 195.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [6 <../img/raid install/raid1.png (PNG copy)> <../img/raid install/raid2.png (PNG copy)>]
-<../img/raid install/raid5.png, id=44, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid5.png Graphic file (type png)
-<use ../img/raid install/raid5.png>
-Package pdftex.def Info: ../img/raid install/raid5.png  used on input line 200.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid6.png, id=45, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid6.png Graphic file (type png)
-<use ../img/raid install/raid6.png>
-Package pdftex.def Info: ../img/raid install/raid6.png  used on input line 204.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [7 <../img/raid install/raid3.png (PNG copy)> <../img/raid install/raid4.png (PNG copy)>]
-<../img/raid install/raid7.png, id=49, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid7.png Graphic file (type png)
-<use ../img/raid install/raid7.png>
-Package pdftex.def Info: ../img/raid install/raid7.png  used on input line 210.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid8.png, id=50, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid8.png Graphic file (type png)
-<use ../img/raid install/raid8.png>
-Package pdftex.def Info: ../img/raid install/raid8.png  used on input line 214.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [8 <../img/raid install/raid5.png (PNG copy)> <../img/raid install/raid6.png (PNG copy)>]
-<../img/raid install/raid9.png, id=54, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid9.png Graphic file (type png)
-<use ../img/raid install/raid9.png>
-Package pdftex.def Info: ../img/raid install/raid9.png  used on input line 220.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid10.png, id=55, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid10.png Graphic file (type png)
-<use ../img/raid install/raid10.png>
-Package pdftex.def Info: ../img/raid install/raid10.png  used on input line 224.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [9 <../img/raid install/raid7.png (PNG copy)> <../img/raid install/raid8.png (PNG copy)>]
-<../img/raid install/raid11.png, id=59, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid11.png Graphic file (type png)
-<use ../img/raid install/raid11.png>
-Package pdftex.def Info: ../img/raid install/raid11.png  used on input line 229.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid12.png, id=60, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid12.png Graphic file (type png)
-<use ../img/raid install/raid12.png>
-Package pdftex.def Info: ../img/raid install/raid12.png  used on input line 233.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [10 <../img/raid install/raid9.png (PNG copy)> <../img/raid install/raid10.png (PNG copy)>]
-<../img/raid install/raid13.png, id=64, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid13.png Graphic file (type png)
-<use ../img/raid install/raid13.png>
-Package pdftex.def Info: ../img/raid install/raid13.png  used on input line 239.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid14.png, id=65, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid14.png Graphic file (type png)
-<use ../img/raid install/raid14.png>
-Package pdftex.def Info: ../img/raid install/raid14.png  used on input line 243.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [11 <../img/raid install/raid11.png (PNG copy)> <../img/raid install/raid12.png (PNG copy)>]
-<../img/raid install/raid15.png, id=69, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid15.png Graphic file (type png)
-<use ../img/raid install/raid15.png>
-Package pdftex.def Info: ../img/raid install/raid15.png  used on input line 249.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
-<../img/raid install/raid16.png, id=70, 602.25pt x 451.6875pt>
-File: ../img/raid install/raid16.png Graphic file (type png)
-<use ../img/raid install/raid16.png>
-Package pdftex.def Info: ../img/raid install/raid16.png  used on input line 253.
-(pdftex.def)             Requested size: 354.86412pt x 266.1556pt.
- [12 <../img/raid install/raid13.png (PNG copy)> <../img/raid install/raid14.png (PNG copy)>] [13 <../img/raid install/raid15.png (PNG copy)> <../img/raid install/raid16.png (PNG copy)>] [14] (./main.aux) ) 
+[3] [4] [5]
+<../img/lsblk.png, id=36, 463.7325pt x 507.8975pt>
+File: ../img/lsblk.png Graphic file (type png)
+<use ../img/lsblk.png>
+Package pdftex.def Info: ../img/lsblk.png  used on input line 180.
+(pdftex.def)             Requested size: 354.86412pt x 388.66432pt.
+ [6 <../img/lsblk.png>] [7] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 18111 strings out of 476182
- 353477 string characters out of 5796582
+ 18005 strings out of 476182
+ 350110 string characters out of 5796582
  1859793 words of memory out of 6000000
- 38068 multiletter control sequences out of 15000+600000
+ 37977 multiletter control sequences out of 15000+600000
  520230 words of font info for 59 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 99i,6n,94p,1313b,296s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,7n,94p,1313b,282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (15 pages, 1713396 bytes).
+Output written on main.pdf (8 pages, 1614239 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
