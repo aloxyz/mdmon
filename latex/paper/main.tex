@@ -155,7 +155,106 @@ appoggiandosi a un server con autenticazione.
 \end{enumerate}
 
 \subsection{Configurazione della macchina virtuale}
-\subsection{Installazione del sistema operativo e RAID}
+La macchina, su cui viene installato Debian 12.1.0, è stata configurata nel modo seguente:
+\begin{itemize}
+    \item 4 vCPU
+    \item RAM 4GB
+    \item 2 dischi di archiviazione da 16GB
+    \item 3 dischi di archiviazione da 1GB
+\end{itemize}
+
+\subsection{Installazione del sistema operativo}
+L'installazione grafica di Debian fornisce un'interfaccia utente intuitiva che semplifica la configurazione del sistema operativo durante il processo di installazione. Questa modalità di installazione permette di definire varie configurazioni. Di seguito sono elencati alcuni dei parametri:
+\begin{itemize}
+    \item Hostname: L'hostname è il nome univoco assegnato al computer nella rete.
+    \item Username: Durante la procedura di installazione, è possibile definire il nome utente principale per l'account amministrativo. Questo sarà l'account con privilegi di superutente (root).
+    \item Password: Si può impostare la password associata all'account root e agli altri account utente creati durante l'installazione.
+    \item Zona Oraria: L'utente può selezionare la zona oraria appropriata per il sistema, così che l'orologio del sistema sia correttamente sincronizzato con il fuso orario locale.
+    \item Selezione del Software: Durante l'installazione grafica, è possibile scegliere quali gruppi di pacchetti e software installare. Quì viene scelto di installare XFCE come desktop environment (DE).
+    \item Rete: Configurazione delle impostazioni di rete, tra cui la configurazione manuale o automatica dell'indirizzo IP, la configurazione del gateway, e altre opzioni relative alla connettività di rete.
+    \item Partizionamento del Disco: Gli utenti hanno la possibilità di definire la configurazione delle partizioni del disco rigido.
+\end{itemize}
+
+\subsubsection{Configurazione della partizione RAID 1}
+In questo caso l'installer ci permette comodamente di configurare la partizione \textbf{RAID 1} per il mountpoint di root (/) prima ancora di installare Debian:
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid1.png}
+    \centering
+    \caption{Seleziona partizionamento manuale}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid2.png}
+    \centering
+    \caption{Crea una tabella di partizione vuota sui dischi usati per il RAID1}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid3.png}
+    \centering
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid4.png}
+    \centering
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid5.png}
+    \centering
+    \caption{Crea partizione del primo disco}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid6.png}
+    \centering
+    \caption{Seleziona partizionamento manuale}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid7.png}
+    \centering
+    \caption{Specificare il tipo della partizione come volume fisico RAID}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid8.png}
+    \centering
+    \caption{Replicare il processo per il secondo disco}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid9.png}
+    \centering
+    \caption{Configurare software RAID}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid10.png}
+    \centering
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid11.png}
+    \centering
+    \caption{Creare due dispositivi MD per le nuove partizioni}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid12.png}
+    \centering
+    \caption{Scegliere livello di RAID}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid13.png}
+    \centering
+    \caption{Impostare il numero di dispositivi per l'array}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid14.png}
+    \centering
+    \caption{Scegliere il numero di spare devices}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid15.png}
+    \centering
+    \caption{Selezionare i dispositivi attivi}
+
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/raid install/raid16.png}
+    \centering
+    \caption{Creare il filesystem di root sul dispositivo RAID}
+\end{figure}
+
 \subsection{Configurazione di RAID 5}
 \subsection{Creazione e configurazione dell'utenza}
 \subsection{Installazione e configurazione di SAMBA}
