@@ -147,6 +147,12 @@ Per il nostro progetto, abbiamo selezionato \textbf{Debian 12 "Bookworm"} come s
 \end{itemize}
 Come ambiente desktop, abbiamo optato per \textbf{XFCE} per la sua leggerezza e semplicità. \textbf{XFCE} offre un'esperienza utente intuitiva senza compromettere le risorse di sistema, il che è importante per garantire prestazioni ottimali in ambienti server. La combinazione di \textbf{Debian} e \textbf{XFCE} ci fornisce un sistema stabile, facile da gestire e ottimizzato per le nostre esigenze di progetto.
 
+\subsection{Postfix}
+Postfix è un server di trasferimento di posta (MTA) utilizzato per la gestione dell'invio e della ricezione delle email in un sistema Linux. Nel contesto del nostro progetto, utilizzeremo Postfix per l'autenticazione e il relay delle email tramite il server SMTP di Google. Ciò significa che Postfix fungerà da intermediario tra il nostro sistema e il server SMTP di Google per inviare le email. L'autenticazione è importante per garantire che solo utenti autorizzati possano inviare email attraverso il nostro sistema.
+
+\subsection{Cron}
+Cron è un servizio in ambiente Unix e Unix-like che consente agli utenti di programmare l'esecuzione automatica di comandi o script a intervalli specifici di tempo, giorni della settimana o mesi. In merito al progetto, utilizzeremo cron per automatizzare l'esecuzione periodica dello script \textbf{mdmon}. Questo script è progettato per monitorare lo stato dei dischi in un array RAID e inviare notifiche agli amministratori in caso di anomalie o malfunzionamenti.
+
 \pagebreak
 
 \section{Caso di studio e implementazione}
@@ -348,6 +354,55 @@ The automated notification system
 \end{lstlisting}
 
 \subsubsection{Configurazione di Postfix}
+Installiamo Postfix con
+\begin{verbatim}
+$ sudo apt install mailutils
+\end{verbatim}
+e seguiamo la configurazione del servizio, specificando il \textit{FQDN} (Fully Qualified Domain Name) come l'hostname della nostra macchina.
+\\
+\\
+Configuriamo Postfix aggiungendo delle opzioni per l'autenticazione e il nostro relayhost al file \texttt{/etc/postfix/main.cf}:
+\begin{lstlisting}[caption={main.cf}]
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
+myhostname = labbox.org
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+myorigin = /etc/mailname
+mydestination = localhost.labbox.org, , localhost
+relayhost = [smtp.gmail.com]:587
+mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+inet_protocols = all
+    
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd
+smtp_tls_security_level = encrypt
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+\end{lstlisting}
+Creiamo il file delle credenziali \texttt{/etc/postfix/sasl/sasl\_passwd} e scriviamo dentro
+\begin{verbatim}
+[smtp.gmail.com]:587 example@email.com:<tua password>
+\end{verbatim}
+Con \texttt{postmap} possiamo convertire il file appena creato in un database
+\begin{verbatim}
+$ sudo postmap /etc/postfix/sasl/sasl_passwd
+\end{verbatim}
+Questo creerà un file \texttt{sasl\_passwd.db} nella stessa directory.
+\\
+Cambiamo i permessi del file per permettere solo all'utente \textit{root} di leggere e scrivere
+\begin{verbatim}
+$ sudo chown root:root /etc/postfix/sasl/sasl_passwd
+$ sudo chmod 600 /etc/postfix/sasl/sasl_passwd
+\end{verbatim}
+Infine riavviamo il servizio Postfix
+\begin{verbatim}
+$ sudo systemctl restart postfix
+\end{verbatim}
+
+Bisognerà poi accedere al \textbf{pannello di controllo dell'account Google} per permettere ad "app meno sicure" di eseguire l'accesso.
 
 \section{Conclusioni}
 

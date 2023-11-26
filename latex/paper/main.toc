@@ -5,6 +5,8 @@
 \contentsline {subsection}{\numberline {2.1}SAMBA}{3}{}%
 \contentsline {subsection}{\numberline {2.2}RAID}{3}{}%
 \contentsline {subsection}{\numberline {2.3}Debian}{4}{}%
+\contentsline {subsection}{\numberline {2.4}Postfix}{4}{}%
+\contentsline {subsection}{\numberline {2.5}Cron}{4}{}%
 \contentsline {section}{\numberline {3}Caso di studio e implementazione}{5}{}%
 \contentsline {subsection}{\numberline {3.1}Configurazione della macchina virtuale}{5}{}%
 \contentsline {subsection}{\numberline {3.2}Installazione del sistema operativo}{5}{}%
@@ -14,4 +16,4 @@
 \contentsline {subsection}{\numberline {3.5}Creazione e configurazione dell'utenza}{9}{}%
 \contentsline {subsection}{\numberline {3.6}Sistema di alert}{10}{}%
 \contentsline {subsubsection}{\numberline {3.6.1}Configurazione di Postfix}{10}{}%
-\contentsline {section}{\numberline {4}Conclusioni}{10}{}%
+\contentsline {section}{\numberline {4}Conclusioni}{11}{}%
