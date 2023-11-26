@@ -1,14 +1,15 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {section}{\numberline {1}Abstract}{2}{}%
-\contentsline {section}{\numberline {2}Introduzione}{2}{}%
-\contentsline {subsection}{\numberline {2.1}SAMBA}{2}{}%
+\contentsline {section}{\numberline {2}Introduzione}{3}{}%
+\contentsline {subsection}{\numberline {2.1}SAMBA}{3}{}%
 \contentsline {subsection}{\numberline {2.2}RAID}{3}{}%
 \contentsline {subsection}{\numberline {2.3}Debian}{3}{}%
 \contentsline {section}{\numberline {3}Caso di studio e implementazione}{4}{}%
-\contentsline {subsection}{\numberline {3.1}Installazione del sistema operativo e RAID}{4}{}%
-\contentsline {subsection}{\numberline {3.2}Configurazione di RAID 5}{4}{}%
-\contentsline {subsection}{\numberline {3.3}Creazione e configurazione dell'utenza}{4}{}%
-\contentsline {subsection}{\numberline {3.4}Installazione e configurazione di SAMBA}{4}{}%
-\contentsline {subsection}{\numberline {3.5}Sistema di alert}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Configurazione della macchina virtuale}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Installazione del sistema operativo e RAID}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Configurazione di RAID 5}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Creazione e configurazione dell'utenza}{4}{}%
+\contentsline {subsection}{\numberline {3.5}Installazione e configurazione di SAMBA}{4}{}%
+\contentsline {subsection}{\numberline {3.6}Sistema di alert}{4}{}%
 \contentsline {section}{\numberline {4}Conclusioni}{4}{}%
