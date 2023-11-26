@@ -65,7 +65,8 @@
     %----------------------------------------------------------------------------------------
 
     \HRule \\[0.4cm]
-    { \huge \bfseries "mdmon" - Monitoring delle Partizioni RAID}\\[0.4cm] % Title of your document
+    { \huge \bfseries "mdmon" - Multiple Device Monitoring}\\[0.4cm] % Title of your document
+    progetto di esame per Laboratorio di Amministrazione di Sistemi
     \HRule \\[1.5cm]
 
     %----------------------------------------------------------------------------------------
@@ -133,8 +134,10 @@ Nel contesto specifico del nostro progetto, implementeremo due livelli di RAID: 
     \item \textbf{RAID 5:} Nel caso di RAID 5, la ridondanza dei dati viene ottenuta mediante la distribuzione delle informazioni di parità su tutti i dischi del RAID array. Questo schema permette al sistema di recuperare i dati in caso di guasto di uno dei dischi. Risulta adatto per bilanciare efficacemente le prestazioni e la ridondanza.
 \end{itemize}
 
+\pagebreak
+
 \subsection{Debian}
-Debian è un sistema operativo open-source basato su Linux, rinomato per la sua stabilità, affidabilità e flessibilità. Essendo una distribuzione completamente gratuita, Debian è supportato da una vasta comunità di sviluppatori e utenti appassionati. La sua architettura basata su software libero e il rigoroso processo di selezione dei pacchetti garantiscono un ambiente sicuro e affidabile. Debian è una scelta popolare per una varietà di utilizzi, dalle implementazioni di server aziendali alle soluzioni personalizzate. Grazie al suo ]\textit{package manager} \textbf{APT}, gli utenti possono facilmente installare, aggiornare e gestire le applicazioni con pochi comandi. Debian è particolarmente adatto per coloro che cercano un sistema operativo stabile e altamente personalizzabile.
+Debian è un sistema operativo open-source basato su Linux, rinomato per la sua stabilità, affidabilità e flessibilità, ed è supportato da una vasta comunità di sviluppatori e utenti appassionati. La sua architettura basata su software libero e il rigoroso processo di selezione dei pacchetti garantiscono un ambiente sicuro e affidabile. Debian è una scelta popolare per una varietà di utilizzi, dalle implementazioni di server aziendali alle soluzioni personalizzate. Grazie al suo \textit{package manager} \textbf{APT}, gli utenti possono facilmente installare, aggiornare e gestire le applicazioni con pochi comandi. Debian è particolarmente adatto per coloro che cercano un sistema operativo stabile e altamente personalizzabile.
 \\\\
 Per il nostro progetto, abbiamo selezionato \textbf{Debian 12 "Bookworm"} come sistema operativo Per diversi motivi:
 \begin{itemize}
@@ -144,6 +147,7 @@ Per il nostro progetto, abbiamo selezionato \textbf{Debian 12 "Bookworm"} come s
 \end{itemize}
 Come ambiente desktop, abbiamo optato per \textbf{XFCE} per la sua leggerezza e semplicità. \textbf{XFCE} offre un'esperienza utente intuitiva senza compromettere le risorse di sistema, il che è importante per garantire prestazioni ottimali in ambienti server. La combinazione di \textbf{Debian} e \textbf{XFCE} ci fornisce un sistema stabile, facile da gestire e ottimizzato per le nostre esigenze di progetto.
 
+\pagebreak
 
 \section{Caso di studio e implementazione}
 Il progetto in questione presenta i seguenti quesiti:
@@ -174,7 +178,6 @@ L'installazione grafica di Debian fornisce un'interfaccia utente intuitiva che s
     \item Rete: Configurazione delle impostazioni di rete, tra cui la configurazione manuale o automatica dell'indirizzo IP, la configurazione del gateway, e altre opzioni relative alla connettività di rete.
     \item Partizionamento del Disco: Gli utenti hanno la possibilità di definire la configurazione delle partizioni del disco rigido.
 \end{itemize}
-\pagebreak
 Avremo un partizionamento di questo tipo:
 \begin{figure}[H]
     \includegraphics[width=0.8\textwidth, keepaspectratio]{../img/lsblk.png}
@@ -269,10 +272,82 @@ $ mdadm --detail --scan --verbose >> /etc/mdadm.conf
 \end{verbatim}
 
 \subsection{Installazione e configurazione di SAMBA}
+Installiamo SAMBA
+\begin{verbatim}
+$ sudo apt install samba
+\end{verbatim}
+E aggiungiamo il mountpoint \texttt{/share} in \texttt{/etc/samba/smb.conf}, specificando che gli utenti facenti parte del gruppo \texttt{sambashare} possono accedere alla directory:
+\begin{lstlisting}
+[share]
+    comment = Samba shared directory
+    path = /share
+    read only = no
+    browsable = yes
+    valid users = @sambashare
+\end{lstlisting}
+Concludiamo riavviando il servizio
+\begin{verbatim}
+$ sudo systemctl restart smbd.service
+\end{verbatim}
+
 \subsection{Creazione e configurazione dell'utenza}
+Per dimostrare il funzionamento dei permessi della shared directory, creiamo due utenti \textit{user1} e \textit{user2}, dove solo \textit{user1} farà parte del gruppo \textit{sambashare}:
+\begin{verbatim}
+$ sudo useradd -m user1
+$ sudo useradd -m user2
+$ sudo groupadd sambashare
+$ sudo usermod -aG sambashare user1
+\end{verbatim}
+Avremo quindi
+\begin{verbatim}
+$ groups user1
+user1 : user1 users sambashare
+$ groups user2
+user2 : user2 users
+\end{verbatim}
+
+\pagebreak
+
 \subsection{Sistema di alert}
+Lo script vero e proprio \texttt{/etc/cron.hourly/mdmon} viene eseguito ogni ora da \textit{cron}. Questo script legge un altro file di testo \texttt{/home/admin/fault\_msg} dove scriveremo il messaggio che \textbf{mdmon} invierà al destinatario. Un file di log \texttt{/var/log/mdmon.log} viene creato, dove si tiene traccia dei \textit{check} che esegue \textit{mdmon}. Il \textit{check} funziona controllando l'output del comando \texttt{mdadm --detail <dispositivo md>}, controllando con \texttt{awk} se lo stato è \textbf{degraded}. In questo caso, viene subito inviata una mail con il comando \texttt{mail} di \texttt{gnumail}.
 
+\begin{lstlisting}[language=Bash, caption={checkmd.sh}]
+#!/bin/bash
 
+log_file="/var/log/mdmon.log"
+fault_msg="/home/admin/fault_msg"
+recipient="example@mail.com"
+    
+echo "$(date):" >> $log_file
+    
+for i in /dev/md/*
+do
+    state=$(sudo mdadm --detail $i | grep State | head -n 1 | awk '{print $NF}')
+    if [[ $state = "degraded" ]]
+    then
+        mail -s "Degraded RAID partition ${i}" $recipient < $fault_msg
+        echo "${i} faulty. Sent notification to administrator." >> $log_file
+    else
+        echo "${i} ok." >> $log_file
+    fi
+done
+    
+echo "" >> $log_file
+    
+\end{lstlisting}
+
+\begin{lstlisting}[caption={fault\_msg}]
+This is an automated notification.
+
+Dear Administrator,
+This message was sent because one of the RAID partitions is in a degraded state.
+It is suggested to intervene.
+    
+Sincerely,
+The automated notification system
+\end{lstlisting}
+
+\subsubsection{Configurazione di Postfix}
 
 \section{Conclusioni}
 

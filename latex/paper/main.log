@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.7.3)  26 NOV 2023 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.7.3)  26 NOV 2023 20:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -990,7 +990,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <unime.png, id=4, 1778.645pt x 1790.69pt>
 File: unime.png Graphic file (type png)
 <use unime.png>
-Package pdftex.def Info: unime.png  used on input line 103.
+Package pdftex.def Info: unime.png  used on input line 104.
 (pdftex.def)             Requested size: 70.26276pt x 70.71371pt.
 [1
 
@@ -998,40 +998,44 @@ Package pdftex.def Info: unime.png  used on input line 103.
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 137--141
+ [1] [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 140--144
 
  []
 
-[3] [4] [5]
+[4] [5]
 <../img/lsblk.png, id=36, 463.7325pt x 507.8975pt>
 File: ../img/lsblk.png Graphic file (type png)
 <use ../img/lsblk.png>
-Package pdftex.def Info: ../img/lsblk.png  used on input line 180.
+Package pdftex.def Info: ../img/lsblk.png  used on input line 183.
 (pdftex.def)             Requested size: 354.86412pt x 388.66432pt.
  [6 <../img/lsblk.png>]
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 217.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 220.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [7]
-Overfull \hbox (10.56786pt too wide) in paragraph at lines 251--251
+Overfull \hbox (10.56786pt too wide) in paragraph at lines 254--254
 []\OT1/cmtt/m/n/10.95 $ mdadm --create /dev/md1 --level=5 --raid-devices=3 /dev/vdc /dev/vdd /dev/vde 
  []
 
-[8] (./main.aux) ) 
+[8] [9] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 18284 strings out of 476182
- 352593 string characters out of 5796582
+ 18452 strings out of 476182
+ 354575 string characters out of 5796582
  2025793 words of memory out of 6000000
- 38250 multiletter control sequences out of 15000+600000
+ 38412 multiletter control sequences out of 15000+600000
  520993 words of font info for 62 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 99i,7n,94p,1313b,1602s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,7n,99p,1313b,1602s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on main.pdf (9 pages, 1649292 bytes).
+Output written on main.pdf (11 pages, 1657210 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 109 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
