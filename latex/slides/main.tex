@@ -1,0 +1,97 @@
+\documentclass{beamer}
+\usetheme{metropolis}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{transparent}
+\usepackage{wasysym}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+% \definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\fontsize{7}{5}\selectfont
+    aboveskip=15pt, % Adjust the space above the listing
+    belowskip=15pt, % Adjust the space below the listing
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=1
+}
+
+\lstset{style=mystyle}
+
+% \AtBeginSection[]
+% {
+%   \begin{frame}
+%     \frametitle{Table of Contents}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+
+\title{"mdmon" - Multiple Device Monitoring}
+\subtitle{Laboratorio di Amministrazione di Sistemi}
+\author{Gabriele Aloisio [503264]}
+
+\institute{Università degli studi di Messina}
+\date{2023}
+\logo{\includegraphics[height=1cm]{unime.png}}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Table of contents}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Descrizione del progetto}
+
+\end{frame}
+
+\begin{frame}{RAID}
+\end{frame}
+
+\begin{frame}{Debian}
+\end{frame}
+
+\begin{frame}{Cron}
+\end{frame}
+
+\begin{frame}{SAMBA}
+\end{frame}
+
+\begin{frame}{Postfix}
+\end{frame}
+
+\section{Implementation}
+\begin{frame}{The Matrix classe}
+    Before implementing the parallelized algorithms for Ray, we wrote the code for the serial execution in the \alert{Matrix} class:
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}[fragile]{Conclusion}
+    Serial execution always outperforms parallel execution, with both serial execution times and standard deviations sensitive to matrix size. This reveals that the advantages of parallelization are not universally applicable, with the performance gains being countered by overhead in some scenarios.
+\end{frame}
+
+\begin{frame}[standout]
+    Thanks for reading
+    \\
+    \Huge\smiley{}
+\end{frame}
+
+\end{document}
